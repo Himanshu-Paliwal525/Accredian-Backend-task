@@ -7,6 +7,11 @@ const prisma = new PrismaClient();
 
 app.use(express.json());
 app.use(cors());
+
+app.get("/", (req, res) => {
+    res.send("This is backend for accredian-backend-task!!");
+});
+
 app.post("/referrals", async (req, res) => {
     const { referrerName, referrerEmail, refereeName, refereeEmail } = req.body;
     if (!referrerName || !referrerEmail || !refereeName || !refereeEmail) {
